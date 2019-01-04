@@ -209,7 +209,7 @@
 			</div>
 			<!--页面-->
 			<div id="iframeSec">
-				<iframe src="home.html" width="100%" border="0" frameborder="0" scrolling="no"></iframe>
+				<iframe src="home.html" width="100%" border="0" frameborder="0" ></iframe>
 			</div>
 			<!--页面-->
 		</div>
@@ -269,7 +269,7 @@
 			
 		}else{
 			//不存在，创建iframe，并显示
-			var iframeNode = "<iframe src='"+adressName+"' width='100%' border='0' frameborder='0' scrolling='no'></iframe>";
+			var iframeNode = "<iframe src='"+adressName+"' width='100%' border='0' frameborder='0' ></iframe>";
 			$("#iframeSec").append(iframeNode);
 			adressArr.push(adressName);
 			windowAutoHeight();
