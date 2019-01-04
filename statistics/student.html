@@ -11,13 +11,22 @@
 			* {
 				margin: 0px;
 				padding: 0px;
-				border: 1px solid red;
+				/*border: 1px solid red;*/
 			}
 			
 			img {
 				width: 76px;
 				height: 100px;
 				border-radius: 5px;
+			}
+			.card {
+				border-radius: 0px;
+			    background-color: #ffffff;
+			    margin-bottom: 0px;
+			    -webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+			    -moz-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+			    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+			    border: 1px solid #eee;
 			}
 		</style>
 	</head>
@@ -29,20 +38,48 @@
 					<h4 class="page-title">学员统计首页</h4>
 					<div class="row">
 						<!--个人信息-->
-						<div class="col-lg-2">
+						<div class="card col-lg-5">
+							<div class="card-header">
+								<h4 class="card-title">个人信息</h4>
+							</div>
+
 							<img src="../img/studentImg.png">
+							<div class="card-body">
+								<p>姓名：张泽阳</p>
+								<p>学号：Java20022</p>
+								<p>年级：Y2</p>
+								<p>班级：AT1717</p>
+								<p>专业：Java</p>
+								<p>状态：在读</p>
+							</div>
 						</div>
-						<div class="col-lg-3">
-							<p>姓名：</p>
-							<p>年级：</p>
-							<p>班级：</p>
-							<p>专业：</p>
+						<!--学员能力雷达图-->
+						<div class="card col-lg-7">
+							<div class="card-header">
+								<h4 class="card-title">学员能力雷达图</h4>
+							</div>
+							<div class="card-body" id="studentAbilityPicture" style="width: 400; height: 400px;"></div>
 						</div>
-						<div class="col-lg-7">
-							<!--学员能力雷达图-->
-							<div id="studentAbilityPicture" style="width: 400; height: 400px;"></div>
+						<!--学员考试成绩-->
+						<div class=" card col-lg-12">
+							<div class="card-header">
+								<h4 class="card-title">学员考试成绩趋势图</h4>
+							</div>
+							<div class="card-body">
+								123
+							</div>
+						</div>
+						<!--学员作业成绩-->
+						<div class=" card col-lg-12">
+							<div class="card-header">
+								<h4 class="card-title">学员作业成绩趋势图</h4>
+							</div>
+							<div class="card-body">
+								123
+							</div>
 						</div>
 					</div>
+						
 
 				</div>
 			</div>
@@ -63,6 +100,7 @@
 				data: ['学员能力值', '所在班级学员能力平均值']
 			},
 			radar: {
+				center: ['50%', '55%'],
 				// shape: 'circle',
 				name: {
 					textStyle: {
@@ -99,10 +137,22 @@
 				// areaStyle: {normal: {}},
 				data: [{
 						value: [98, 56, 67, 56, 47],
+						label:{
+							show:true,                  //是否显示标签。
+						    position:"insideTop",          //标签的位置。// 绝对的像素值[10, 10],// 相对的百分比['50%', '50%'].'top','left','right','bottom','inside','insideLeft','insideRight','insideTop','insideBottom','insideTopLeft','insideBottomLeft','insideTopRight','insideBottomRight'
+						    offset:[-10, 0],             //是否对文字进行偏移。默认不偏移。例如：[30, 40] 表示文字在横向上偏移 30，纵向上偏移 40。
+						    formatter:'{c}',       //标签内容格式器。模板变量有 {a}、{b}、{c}，分别表示系列名，数据名，数据值。
+						},
 						name: '学员能力值'
 					},
 					{
 						value: [23, 45, 23, 34, 23],
+						label:{
+							show:true,                  //是否显示标签。
+						    position:"insideTop",          //标签的位置。// 绝对的像素值[10, 10],// 相对的百分比['50%', '50%'].'top','left','right','bottom','inside','insideLeft','insideRight','insideTop','insideBottom','insideTopLeft','insideBottomLeft','insideTopRight','insideBottomRight'
+						    offset:[-10, 0],             //是否对文字进行偏移。默认不偏移。例如：[30, 40] 表示文字在横向上偏移 30，纵向上偏移 40。
+						    formatter:'{c}',       //标签内容格式器。模板变量有 {a}、{b}、{c}，分别表示系列名，数据名，数据值。
+						},
 						name: '所在班级学员能力平均值'
 					}
 				]
