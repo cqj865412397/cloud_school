@@ -41,7 +41,7 @@
 					<div id="card-body" class="navSec">
 						<ul class="nav nav-pills nav-primary">
 							<li class="nav-item">
-								<a class="nav-link active" data-adress="home.html">首页111111111111111111111111</a>
+								<a class="nav-link active" data-adress="home.html">首页</a>
 							</li>
 						</ul>
 					</div>
@@ -157,13 +157,13 @@
 				<div class="scrollbar-inner sidebar-wrapper">
 					<div class="user">
 						<div class="photo">
-							<img src="img/profile.jpg">
+							<img src="img/profile.jpg" alt="头像">
 						</div>
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									名字
+									<span class="user-level">角色-职位</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -172,18 +172,8 @@
 							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
 								<ul class="nav">
 									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
+										<a href="#setting-role">
+											<span class="simNav" data-adress="cqj_setting/setting-role.html">角色设置</span>
 										</a>
 									</li>
 								</ul>
@@ -214,7 +204,7 @@
 		</div>
 	</div>
 	<!-- Modal -->
-	<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+	<!--<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header bg-primary">
@@ -233,7 +223,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 </body>
 <script src="js/core/jquery.3.2.1.min.js"></script>
 <script src="js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
@@ -250,19 +240,21 @@
 <script src="js/ready.min.js"></script>
 <script type="text/javascript">
 	function windowAutoHeight(){
-		var h = $(window).height();
-		$("iframe").css("height",h-$(".container-fluid").height()+"px");
+		var h = $(window).height(); 		
+		$("iframe").css("height",h+"px");
 	}
 	$(function(){
 		//初始化
 		windowAutoHeight();
-		
+		document.body.parentNode.style.overflowY = "hidden";
 	})
 	//左侧导航
 	var adressArr = ["home.html"];//默认加载首页
+	var newAdressArr=[];
 	$(".simNav").on("click",function(){
 		var adressName = this.getAttribute("data-adress");
 		var chineseName = this.innerText;
+		console.log(adressArr);
 		if(adressArr.indexOf(adressName) != -1){
 			//存在，显示iframe
 			
@@ -279,6 +271,7 @@
 			//
 			$(".navSec ul li a[data-adress='"+adressName+"']").find("i").click(adressName,closeIframe);
 		}
+			console.log(CountUlWidth());
 			showIframe(adressName);
 	})
 	//移动的全局变量
@@ -322,5 +315,14 @@
 		$("iframe[src='"+event.data+"']").remove();
 	}
 	
+	
+	function CountUlWidth(){
+		var ul=document.querySelector("#card-body ul");
+		//console.log(ul.offsetWidth);
+		var card=document.querySelector("#card-body");
+		console.log("盒子宽:"+card.offsetWidth);
+		console.log("ul宽:"+ul.offsetWidth);
+		return ul.offsetWidth;
+	}
 </script>
 </html>
