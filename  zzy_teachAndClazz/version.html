@@ -8,15 +8,7 @@
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/ready.css">
 		<style type="text/css">
-			.card{
-			   	 border-radius: 0px;
-			    background-color: #ffffff;
-			    margin-bottom: 30px;
-			    -webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
-			    -moz-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
-			    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
-			    border: 1px solid #eee;
-			}
+	
 		</style>
 	</head>
 
@@ -24,41 +16,52 @@
 		<div class="main-panel">
 			<div class="content row">
 				<div class="container-fluid row">
-					<h4 class="page-title col-lg-12 col-xs-6">学员统计首页</h4>
-					<div class="card col-lg-5">
+					<h4 class="page-title col-lg-12 col-xs-6">版本管理</h4>
+					<div class="card col-lg-12">
 						<div class="card-header">
 							<h4 class="card-title">
-								标题
+								所有版本
 							</h4>
-							<p class="card-category">
-								子标题
-							</p>
 						</div>
 						<div class="card-body">
-							
-						</div>
+										<table class="table table-head-bg-success">
+											<thead>
+												<tr>
+													<th scope="col">#</th>
+													<th scope="col">版本</th>
+													<th scope="col">创建时间</th>
+													<th scope="col">说明</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>ACCP 7.0</td>
+													<td>2018/12/16</td>
+													<td>无</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>ACCP 7.0</td>
+													<td>2018/12/16</td>
+													<td>无</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>ACCP 7.0</td>
+													<td>2017/12/16</td>
+													<td>无</td>
+												</tr>
+											</tbody>
+										</table>
+										
+									</div>
 						<div class="card-footer">
-							1
+							<button style="float: right;" class="btn btn-success">添加版本</button>
 						</div>
 					</div>
 					
-					<div class="card col-lg-5">
-						<div class="card-header">
-							<h4 class="card-title">
-								标题
-							</h4>
-							<p class="card-category">
-								子标题
-							</p>
-						</div>
-						<div class="card-body">
-							
-						</div>
-						<div class="card-footer">
-							1
-						</div>
-					</div>
-				</div>
+				
 					
 			</div>
 		</div>
