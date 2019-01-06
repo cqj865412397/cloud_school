@@ -19,6 +19,15 @@
 				height: 100px;
 				border-radius: 5px;
 			}
+			.card{
+				border-radius: 0px;
+			    background-color: #ffffff;
+			    margin-bottom: 0px;
+			    -webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+			    -moz-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+			    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+			    border: 1px solid #eee;
+			}
 			
 		</style>
 	</head>
@@ -34,9 +43,10 @@
 							<div class="card-header">
 								<h4 class="card-title">个人信息</h4>
 							</div>
-
-							<img src="../img/studentImg.png">
-							<div class="card-body">
+							<div class="card-body" style="text-align: center;">
+								<div>
+									<img src="../img/studentImg.png">
+								</div>
 								<p>姓名：张泽阳</p>
 								<p>学号：Java20022</p>
 								<p>年级：Y2</p>
@@ -56,9 +66,19 @@
 						<div class=" card col-lg-12">
 							<div class="card-header">
 								<h4 class="card-title">学员考试成绩趋势图</h4>
+								<!--<p class="card-category">
+									<label class="form-radio-label">
+										<input class="form-radio-input" type="radio" name="optionsRadios" value="">
+										<span class="form-radio-sign">按成绩</span>
+									</label>
+									<label class="form-radio-label">
+										<input class="form-radio-input" type="radio" name="optionsRadios" value="" checked="">
+										<span class="form-radio-sign">按名称</span>
+									</label>
+								</p>-->
 							</div>
 							<div class="card-body">
-								123
+								<div id="studentTestPictrue" style="width: 400; height: 400px;"></div>
 							</div>
 							<div class="card-footer">
 								<div class="legend">
@@ -75,6 +95,62 @@
 							<div class="card-body">
 								123
 							</div>
+							<div class="card-footer">
+								<div class="legend">
+									<i class="la la-circle text-primary"></i>
+									 查看很多
+								</div>
+							</div>
+						</div>
+						<!--日常考勤-->
+						<div class=" card col-lg-12">
+							<div class="card-header">
+								<h4 class="card-title">日常考勤</h4>
+							</div>
+							<div class="card-body">
+								<div id="dailyPicture" style="width: 400; height: 400px;"></div>
+							</div>
+							<div class="card-footer">
+								<div class="legend">
+									<i class="la la-circle text-primary"></i>
+									 查看很多
+								</div>
+							</div>
+						</div>
+						<div class="card col-lg-12">
+							<div class="card-header">
+								<h4 class="card-title">
+									查漏补缺
+								</h4>
+								<p class="card-category">
+									结合多次考试分析出（该知识点所有对应的所有题目错误率30%）
+									<br>
+									上报：告诉教员该知识点没有听懂，需要教员重新讲解。当全班上报人数>全班人数*70%。教员会接到通知
+								</p>
+							</div>
+							<div class="card-body">
+								<table class="table table-bordered" style="text-align: center;">
+									<thead>
+										<tr>
+											<th scope="col">书籍</th>
+											<th scope="col">章节</th>
+											<th scope="col">知识点</th>
+											<th scope="col">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>JAVAOOP</td>
+											<td>面向对象</td>
+											<td>面向对象的三大特征</td>
+											<td>
+												<button class="btn btn-danger">补习</button>
+												<button class="btn btn-info">上报</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 						
@@ -88,6 +164,7 @@
 	<script type="text/javascript">
 		//初始化echars实例
 		var myChar = echarts.init(document.querySelector("#studentAbilityPicture"));
+		//myChar.showLoading();
 		//设置图标配置和数据
 		option = {
 			title: {
@@ -157,6 +234,142 @@
 			}]
 		};
 		myChar.setOption(option);
+		
+		//初始化echars实例
+		var myChar1 = echarts.init(document.querySelector("#studentTestPictrue"));
+		//myChar.showLoading();
+		option1 = {
+		    title: {
+		        
+		    },
+		    tooltip: {
+		        trigger: 'axis'
+		    },
+		    legend: {
+		        data:['最高气温','最低气温']
+		    },
+		    toolbox: {
+		        show: true,
+		        feature: {
+		            dataZoom: {
+		                yAxisIndex: 'none'
+		            },
+		            dataView: {readOnly: true},
+		            magicType: {type: ['line', 'bar']},
+		            restore: {},
+		            saveAsImage: {}
+		        }
+		    },
+		    xAxis:  {
+		        type: 'category',
+		        boundaryGap: false,
+		        data: ['mysql周测1','mysql周测2','mysql周测3','mysql周测4','mysql周测5','mysql周测','mysql周测','mysql周测','mysql周测','mysql周测']
+		    },
+		    yAxis: {
+		        type: 'value',
+		        axisLabel: {
+		            formatter: '{value} 分'
+		        }
+		    },
+		    series: [
+		        {
+		            name:'分数',
+		            type:'line',
+		            label: {
+		                normal: {
+		                    show: true,
+		                    position: 'inside'
+		                }
+		            },
+		            data:[71, 81, 95, 73, 82, 93, 70,23,23,23],
+		            markPoint: {
+		                data: [
+		                    {type: 'max', name: '最大值'},
+		                    {type: 'min', name: '最小值'}
+		                ]
+		            },
+		            markLine: {
+		                data: [
+		                    {type: 'average', name: '平均值'}
+		                ]
+		            }
+		        }
+		    ]
+		};
+		myChar1.setOption(option1);
+		
+		
+		
+		//初始化echars实例
+		var myChar2 = echarts.init(document.querySelector("#dailyPicture"));
+		//myChar2.showLoading();
+		var option2 ={
+			 tooltip: {
+		        trigger: 'item',
+		        formatter: "{b}: {c} ({d}%)"
+		    },
+		    legend: {
+		        orient: 'vertical',
+		        x: 'left',
+		        data:['正常','迟到','早退']
+		    },
+		    series: [
+		        {
+		            labelLine: {
+		                normal: {
+		                    show: false
+		                }
+		            },
+		            name:'访问来源',
+		            type:'pie',
+		            radius: ['40%', '55%'],
+		            label: {
+		                normal: {
+		                    formatter: '{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+		                    backgroundColor: '#eee',
+		                    borderColor: '#aaa',
+		                    borderWidth: 1,
+		                    borderRadius: 4,
+		                    shadowBlur:3,
+		                    shadowOffsetX: 2,
+		                    shadowOffsetY: 2,
+		                    shadowColor: '#999',
+		                    padding: [0, 0],
+		                    rich: {
+		                        a: {
+		                            color: '#999',
+		                            lineHeight: 22,
+		                            align: 'center'
+		                        },
+		                        hr: {
+		                            borderColor: '#aaa',
+		                            width: '100%',
+		                            borderWidth: 0.5,
+		                            height: 0
+		                        },
+		                        b: {
+		                            fontSize: 16,
+		                            lineHeight: 33
+		                        },
+		                        per: {
+		                            color: '#eee',
+		                            backgroundColor: '#334455',
+		                            padding: [2, 4],
+		                            borderRadius: 2
+		                        }
+		                    }
+		                }
+		            },
+		            data:[
+		                {value:335, name:'正常'},
+		                {value:310, name:'迟到'},
+		                {value:234, name:'早退'}
+		            ]
+		        
+		        }
+		    ]
+		};
+		myChar2.setOption(option2);
 	</script>
 
 </html>
