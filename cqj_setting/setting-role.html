@@ -7,14 +7,16 @@
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/ready.css">
+		<link rel="stylesheet" href="../css/demo.css">
 		<style type="text/css">
-				/** {
+			/** {
 				margin: 0px;
 				padding: 0px;
 				
 			}*/
-			.card{
-			    margin-bottom: 10px;
+			
+			.card {
+				margin-bottom: 10px;
 			}
 		</style>
 	</head>
@@ -22,109 +24,122 @@
 	<body>
 		<div class="main-panel">
 			<div class="content">
-				<div class="container-fluid row">
-					<h4 class="page-title col-lg-12">角色设置</h4>
-					<div class="card col-lg-12">
-						<div class="card-body">
-							<p class="demo">
-								<button class="btn btn-primary">创建角色</button>
-								<button class="btn btn-primary">创建角色并赋值模块</button>
-							</p>
-						</div>
-					</div>
-					<div class="card col-lg-2">
-						<!--<div class="card-header">
-							<h4 class="card-title">
-								标题
-							</h4>
-							<p class="card-category">
-								子标题
-							</p>
-						</div>-->
-						<div class="card-body">
-							<ul class="nav">
-								<li>
-									<a href="#setting-role">
-										<span class="simNav" data-adress="cqj_setting/setting-role.html">角色1</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="card col-lg-10">
-						<div class="card-header">
-							<h4 class="card-title">
-								编辑显示模块
-							</h4>
-							<!--<p class="card-category">
-								子标题
-							</p>-->
-						</div>
-						<div class="card-body">
-							<div class="row">
-								<div class="col-md-6">
-								<div class="card">
-									<div class="card-header">
-										<div class="card-title">Basic Table</div>
-									</div>
-									<div class="card-body">
-										<div class="card-sub">									
-											This is the basic table view of the ready dashboard :
-										</div>
-										<table class="table mt-3">
-											<thead>
-												<tr>
-													<th scope="col">#</th>
-													<th scope="col">First</th>
-													<th scope="col">Last</th>
-													<th scope="col">Handle</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>1</td>
-													<td>Mark</td>
-													<td>Otto</td>
-													<td>@mdo</td>
-												</tr>
-												<tr>
-													<td>2</td>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td colspan="2">Larry the Bird</td>
-													<td>@twitter</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+				<div class="container-fluid">
+					<h4 class="page-title">角色设置</h4>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-body">
+									<p class="demo">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="default">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="primary">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="success">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="info">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="warning">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="danger">
+									</p>
+									<p class="demo">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="default" data-style="btn-round">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="primary" data-style="btn-round">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-style="btn-round">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="info" data-style="btn-round">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-style="btn-round">
+										<input type="checkbox" checked data-toggle="toggle" data-onstyle="danger" data-style="btn-round">
+									</p>
 								</div>
 							</div>
 						</div>
-						<div class="card-footer">
-							<p class="demo">
-								<button class="btn btn-primary">保存</button>
-							</p>
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">数据统计</div>
+									<div v-if="a">
+										<input id="z" type="checkbox" checked="checked" data-toggle="toggle" data-onstyle="success" data-style="btn-round">
+									</div>
+									<div v-else>
+										<input id="z" type="checkbox"  data-toggle="toggle" data-onstyle="success" data-style="btn-round">
+
+									</div>
+									<p id="aaa"></p>
+								</div>
+								<div class="card-body">
+									<div class="card-sub">
+										备注
+									</div>
+									<table class="table mt-3">
+										<thead>
+											<tr>
+												<th scope="col">模块名称</th>
+												<th scope="col">操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>学员统计</td>
+
+												<td>
+													<input type="checkbox" checked data-toggle="toggle" data-onstyle="danger" data-style="btn-round">
+												</td>
+											</tr>
+											<tr>
+												<td>班级统计</td>
+
+												<td>
+													<input type="checkbox" checked data-toggle="toggle" data-onstyle="danger" data-style="btn-round">
+												</td>
+											</tr>
+											<tr>
+												<td>教员统计</td>
+
+												<td>
+													<input type="checkbox" checked data-toggle="toggle" data-onstyle="danger" data-style="btn-round">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
 	</body>
-<script src="js/core/jquery.3.2.1.min.js"></script>
-<script src="js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="js/core/popper.min.js"></script>
-<script src="js/core/bootstrap.min.js"></script>
-<script src="js/plugin/chartist/chartist.min.js"></script>
-<script src="js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
-<script src="js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-<script src="js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-<script src="js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
-<script src="js/plugin/chart-circle/circles.min.js"></script>
-<script src="js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<script src="js/ready.min.js"></script>
+	<script src="../js/core/jquery.min.js"></script>
+	<script src="../js/core/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../js/core/popper.min.js"></script>
+	<script src="../js/core/bootstrap.min.js"></script>
+	<script src="../js/plugin/chartist/chartist.min.js"></script>
+	<script src="../js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+	<script src="../js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+	<script src="../js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+	<script src="../js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+	<script src="../js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+	<script src="../js/plugin/chart-circle/circles.min.js"></script>
+	<script src="../js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="../js/ready.min.js"></script>
+
+	<script type="text/javascript">
+		var v = new Vue({
+			el: ".content",
+			data: {
+				a: false
+			}
+		});
+		$(function() {
+
+			document.querySelector("#aaa").innerHTML = document.querySelector("#z").checked;
+			$("#aaa").click(function(){
+				v.a=true;
+			document.querySelector("#aaa").innerHTML = document.querySelector("#z").checked;
+				
+			})
+			/*$("#z").click(function(){
+				document.querySelector("#aaa").innerHTML=document.querySelector("#z").checked;
+			});*/
+		})
+	</script>
+
 </html>
