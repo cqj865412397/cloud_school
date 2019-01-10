@@ -53,20 +53,20 @@ function dTree(objName, objbool) { // void 构造方法，创建树对象。objName: 树名称
 		inOrder: false // 如果父节点总是在子节点之前加入树，设置true有更好的效率，默认false 
 	}
 	this.icon = {
-		root: 'img/base.gif', // Node 根节点。 
-		folder: 'img/folder.gif', // Node 根节点。 
-		folderOpen: 'img/folderopen.gif', // 打开的文件夹,默认'img/folderOpen.gif' 
-		node: 'img/page.gif', // 打开的文件夹,默认'img/folderOpen.gif' 
-		empty: 'img/empty.gif', // 打开的文件夹,默认'img/folderOpen.gif' 
-		line: 'img/line.gif', // 竖线,默认'img/line.gif'
-		join: 'img/join.gif', // 丁线,默认'img/join.gif' 
-		joinBottom: 'img/joinbottom.gif', // 直角线,默认'img/joinbottom.gif' 
-		plus: 'img/plus.gif', // 加号丁线,默认'img/plus.gif' 
-		plusBottom: 'img/plusbottom.gif', // 加号直角线,默认'img/plusbottom.gif' 
-		minus: 'img/minus.gif', // 减号丁线,默认'img/minus.gif' 
-		minusBottom: 'img/minusbottom.gif', // 减号直角线,默认'img/minusbottom.gif'  
-		nlPlus: 'img/nolines_plus.gif', // 减号直角线,默认'img/minusbottom.gif' 
-		nlMinus: 'img/nolines_minus.gif' //无线减号,默认'img/nolines_minus.gif' 
+		root: '../img/base.gif', // Node 根节点。 
+		folder: '../img/folder.gif', // Node 根节点。 
+		folderOpen: '../img/folderopen.gif', // 打开的文件夹,默认'img/folderOpen.gif' 
+		node: '../img/page.gif', // 打开的文件夹,默认'img/folderOpen.gif' 
+		empty: '../img/empty.gif', // 打开的文件夹,默认'img/folderOpen.gif' 
+		line: '../img/line.gif', // 竖线,默认'img/line.gif'
+		join: '../img/join.gif', // 丁线,默认'img/join.gif' 
+		joinBottom: '../img/joinbottom.gif', // 直角线,默认'img/joinbottom.gif' 
+		plus: '../img/plus.gif', // 加号丁线,默认'img/plus.gif' 
+		plusBottom: '../img/plusbottom.gif', // 加号直角线,默认'img/plusbottom.gif' 
+		minus: '../img/minus.gif', // 减号丁线,默认'img/minus.gif' 
+		minusBottom: '../img/minusbottom.gif', // 减号直角线,默认'img/minusbottom.gif'  
+		nlPlus: '../img/nolines_plus.gif', // 减号直角线,默认'img/minusbottom.gif' 
+		nlMinus: '../img/nolines_minus.gif' //无线减号,默认'img/nolines_minus.gif' 
 	};
 	this.obj = objName; // String 树的名称，在创建树时定义。 
 	this.aNodes = []; // Node[] 树中的节点数组。 
