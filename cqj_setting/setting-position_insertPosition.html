@@ -3,29 +3,13 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>职位设置</title>
+		<title>职位设置-增加职位</title>
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/ready.css">
-
 		<link rel="stylesheet" href="../css/demo.css">
-		<link rel="StyleSheet" href="dtree.css" type="text/css" />
+			<link rel="StyleSheet" href="dtree.css" type="text/css" />
 		<script type="text/javascript" src="dtree.js"></script>
-		<script src="../js/core/jquery.min.js"></script>
-		<script src="../js/core/vue.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-		<script src="../js/core/popper.min.js"></script>
-		<script src="../js/core/bootstrap.min.js"></script>
-		<script src="../js/plugin/chartist/chartist.min.js"></script>
-		<script src="../js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
-		<script src="../js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-		<script src="../js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-		<script src="../js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
-		<script src="../js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
-		<script src="../js/plugin/chart-circle/circles.min.js"></script>
-		<script src="../js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-		<script src="../js/ready.min.js"></script>
-		
 		<style type="text/css">
 			.card {
 				margin-bottom: 10px;
@@ -37,57 +21,33 @@
 		<div class="main-panel">
 			<div class="content">
 				<div class="container-fluid">
-					<h4 class="page-title">职位设置</h4>
-
+					<h4 class="page-title">增加职位</h4>
+					
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-body">
-									<p class="demo">
-										<button name="goInsertPosition" class="btn btn-success">创建职位</button>
-									</p>
-								</div>
+								<div class="form-group">
+												<label for="squareSelect">上级</label>
+												<select class="form-control input-square" id="squareSelect">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+												</select>
+											</div>
+								<div class="form-group">
+											<label for="email">职位名称</label>
+											<input type="email" class="form-control" id="email" placeholder="职位名称">
+										</div>
 							</div>
+							</div>
+							
 						</div>
 						<div class="col-md-12">
 							<div class="card">
-								<div class="card-header">
-									<h4 class="card-title">职位列表</h4>
-								</div>
-								<div class="card-body">
-									<p class="demo">
-										<button class="btn btn-default">Default</button>
-
-										<button class="btn btn-primary">Primary</button>
-
-										<button class="btn btn-info">Info</button>
-
-										<button class="btn btn-success">Success</button>
-
-										<button class="btn btn-warning">Warning</button>
-
-										<button class="btn btn-danger">Danger</button>
-
-										<button class="btn btn-link">Link</button>
-									</p>
-
-									<p class="demo">
-										<button class="btn btn-primary">角色1</button>
-										<button class="btn btn-info">角色2</button>
-										<button class="btn btn-info">角色3</button>
-										<button class="btn btn-info">角色3</button>
-										<button class="btn btn-info">角色3</button>
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header">
-									<h4 class="card-title">权限</h4>
-								</div>
 									<div class="card-body dtree" id="dtree_div">
-
 										<p class="demo">
 											<button class="btn btn-info" onclick="d.closeAll()">展开</button>
 											<button class="btn btn-info" onclick="d.openAll()">收回</button>
@@ -121,14 +81,38 @@
 								</div>
 							</div>
 						</div>
+								<div class="col-md-12">
+								<div class="card">
 
+									<div class="card-body">
+										
+										<p style="float: right;" class="demo">
+											<button  class="btn btn-success" >保存修改</button>
+											<button  class="btn btn-success" onclick="javascript:history.back(-1);">返回</button>
+										</p>
+									</div>
+								</div>
+							</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
 	</body>
-	
+	<script src="../js/core/jquery.min.js"></script>
+	<script src="../js/core/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../js/core/popper.min.js"></script>
+	<script src="../js/core/bootstrap.min.js"></script>
+	<script src="../js/plugin/chartist/chartist.min.js"></script>
+	<script src="../js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+	<script src="../js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+	<script src="../js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+	<script src="../js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+	<script src="../js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+	<script src="../js/plugin/chart-circle/circles.min.js"></script>
+	<script src="../js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="../js/ready.min.js"></script>
 
 	<script type="text/javascript">
 		var v = new Vue({
@@ -137,16 +121,9 @@
 				a: false
 			}
 		});
-
 		$(function() {
-			//点击进入子模块修改
-			$('[name="goUpdateModule"]').click(function() {
-				window.location.href = "setting-role_updateModule.html?id=10"
-			});
-			//点击创建角色
-			$('[name="goInsertPosition"]').click(function() {
-				window.location.href = "setting-position_insertPosition.html"
-			});
+			
+		
 		})
 	</script>
 

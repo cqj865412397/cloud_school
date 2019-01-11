@@ -94,33 +94,42 @@
 							</div>
 							<div class="form-group">
 								<label for="defaultSelect">章节</label>
-								<select class="form-control form-control" id="defaultSelect">
-									<option>请选择</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<select class="form-control form-control" id="defaultSelect" name="cid">
+									<option value="-1">请选择</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="defaultSelect">小结</label>
-								<select class="form-control form-control" id="defaultSelect">
-									<option>请选择</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<select class="form-control form-control" id="defaultSelect" name="kid">
+									<option value="-1">请选择</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="defaultSelect">题目类型</label>
-								<select class="form-control form-control" id="topictype">
+								<select class="form-control form-control"  id="topictype" name="kid">
 									<option value="-1">请选择</option>
 									<option value="0">选择题</option>
 									<option value="1">阅读题</option>
 									<option value="2">上机题</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="defaultSelect">难度</label>
+								<select class="form-control form-control"  id="topictype" name="kid">
+									<option value="-1">请选择</option>
+									<option value="0">简</option>
+									<option value="1">中</option>
+									<option value="2">难</option>
 								</select>
 							</div>
 							<div class="form-group topicconten">
@@ -198,6 +207,7 @@
 <script src="js/ready.min.js"></script>
 <script src="js/demo.js"></script>-->
 <script src="../js/core/jquery.min.js"></script>
+<script src="../js/core/utils.js"></script>
 <script>
 	$(function(){
 		$("#topictype").change(function(){
@@ -231,5 +241,8 @@
 			}
 			/*上机题目*/
 		})
+		
 	})
+	var c=obj.getSelectParam(".card-body")
+	alert(JSON.stringify(c))
 </script>
